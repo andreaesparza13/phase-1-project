@@ -5,6 +5,7 @@
         <link rel="stylesheet" type="text/css" href="style.css" />
         <title>Cat or Dog Quiz</title>
         <script defer src="index.js"></script>
+        <script src="config.js" hidden></script>
     </head>
     <body>
         <div id="header">
@@ -14,14 +15,14 @@
             <h2>Answer the questions below to find out!</h2>
         </div>
         <div id="q1" class="question" style="border-color:#2274A5">
-            <h3>When you see your friends at a grocery store</h3>
+            <h3>What do you do when you see your friends at a grocery store</h3>
         </div>
         <div class="answer-choices">
             <div id="q1a" class="answer-choice" style="border-color:#2274A5">
-                <p>You jump them</p>
+                <p>Jump them!</p>
             </div>
             <div id="q1b" class="answer-choice" style="border-color:#2274A5">
-                <p>You stalk them</p>
+                <p>Stalk them.</p>
             </div>
         </div>
         <div id="q2" class="question" style="border-color:#F75C03">
@@ -80,6 +81,10 @@
                 </p>
             </div>            
         </div>
-
+        <form id="name-box">
+            <label for="name">Enter your name</label>
+            <input id="name" type="text" name="Name">
+            <button id="submit-form"></button>
+        </form>
     </body>
 </html>
