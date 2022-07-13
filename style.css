@@ -25,13 +25,18 @@ h2 {
     border-bottom: 4px solid #253237;
 }
 
+form {
+    display: flex;
+    justify-content: center;
+}
+
 .question {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
     font-size: 30px;
     height: 100px;
-    width: 60%;
+    width: 50%;
     border: 15px solid;
     padding: 20px;
     margin: auto;
@@ -42,18 +47,22 @@ h2 {
 
 .answer-choice {
     display: inline-block;
-    vertical-align: top;
+    vertical-align: middle;
     flex-wrap: wrap;
     font-size: 20px;
     height: 75px;
-    width: 25%;
+    width: 20%;
     border: 15px solid;
     padding: 25px;
     margin: 20px;
+    align-items: center;
+    align-content: center;
     text-align: center;
+    justify-content: center;
 }
 
 .answer-choices {
     display: flex;
     justify-content: center;
 }
+
