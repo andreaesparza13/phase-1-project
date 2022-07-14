@@ -2,14 +2,13 @@
 const catUrl = 'https://api.thecatapi.com/v1/images/search'
 const answerChoice = document.querySelectorAll('.answer-choice')
 const question = document.getElementsByClassName("question")
+let urlObject = {}
 
 function displayCat() {
     fetch(catUrl)
     .then(res => res.json())
-    .then(cat => console.log(cat))
+    .then(cat => urlObject = cat[0].url)
 }
-
-
 
 const handleMouse = () => {
     answerChoice.forEach(choice => {
@@ -31,26 +30,45 @@ function handleClick() {
             } else  {
                 e.target.style.backgroundColor = 'white'
             }
-            console.log(e.target.style.backgroundColor)
         })
     })
 }
 
+const btn = document.querySelector('#submit-form')
+btn.innerHTML = 'Submit'
 
-function handleSubmit(){
-    const form = document.querySelector("#name-box")
-    const btn = document.querySelector('#submit-form')
-    btn.textContent = 'Submit'
-    btn.style.fontSize = '30px'
-    form.addEventListener('submit', e => {
-        // e.preventDefault()
-        const userInput = e.target.name.value
-        alert (`Congratulations, ${userInput}, you are a cat person!`)
-        form.reset()
-    })
+
+let form = document.querySelector('form')
+form.addEventListener('submit', (e) => {
+    e.preventDefault()
+    buildAnswer(e.target.name.value)
+    form.reset()
+})
+
+function buildAnswer(answer) {
+    let p = document.createElement('p')
+    p.textContent = "Congratulations,  " + `${answer}` + ", you are a cat person!"
+    document.querySelector('#answer').appendChild(p)
+    let catPic = document.querySelector('img')
+    catPic.src = urlObject
 }
+
+
+// function handleSubmit(){
+//     const form = document.querySelector("#name-box")
+//     const btn = document.querySelector('#submit-form')
+//     btn.textContent = 'Submit'
+//     btn.style.fontSize = '30px'
+//     form.addEventListener('submit', e => {
+//         // e.preventDefault()
+//         const userInput = e.target.name.value
+//         alert (`Congratulations, ${userInput}, you are a cat person!`)
+//         form.reset()
+//     })
+// }
 
 // Function Invocations
 handleMouse()
 handleClick()
-handleSubmit()
+displayCat()
+// handleSubmit()

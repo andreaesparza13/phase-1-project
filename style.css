@@ -69,3 +69,6 @@ form {
     justify-content: center;
 }
 
+img {
+    box-sizing: border-box;
+}
