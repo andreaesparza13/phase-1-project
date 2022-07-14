@@ -3,6 +3,7 @@ const catUrl = 'https://api.thecatapi.com/v1/images/search'
 const answerChoice = document.querySelectorAll('.answer-choice')
 const question = document.getElementsByClassName("question")
 let urlObject = {}
+let catPic = document.querySelector('img')
 
 function displayCat() {
     fetch(catUrl)
@@ -46,7 +47,6 @@ form.addEventListener('submit', (e) => {
 function buildAnswer(answer) {
     let p = document.createElement('p')
     let btn = document.createElement('button')
-    let catPic = document.querySelector('img')
     catPic.src = urlObject
     btn.addEventListener('click', handleDelete)
     p.textContent = "Congratulations,  " + `${answer}` + ", you are a cat person!"
