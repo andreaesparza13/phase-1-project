@@ -21,7 +21,6 @@ const handleMouse = () => {
     }) 
 }
 
-
 function handleClick() {
     answerChoice.forEach(choice => {
         choice.addEventListener('click', e => {
@@ -37,7 +36,6 @@ function handleClick() {
 const btn = document.querySelector('#submit-form')
 btn.innerHTML = 'Submit'
 
-
 let form = document.querySelector('form')
 form.addEventListener('submit', (e) => {
     e.preventDefault()
@@ -48,38 +46,21 @@ form.addEventListener('submit', (e) => {
 function buildAnswer(answer) {
     let p = document.createElement('p')
     let btn = document.createElement('button')
-    btn.addEventListener('click', handleDelete)
-    p.textContent = "Congratulations,  " + `${answer}` + ", you are a cat person! "
-    btn.textContent = 'retake'
-    document.querySelector('#answer').appendChild(btn)
-    document.querySelector('#answer').appendChild(p)
     let catPic = document.querySelector('img')
     catPic.src = urlObject
+    btn.addEventListener('click', handleDelete)
+    p.textContent = "Congratulations,  " + `${answer}` + ", you are a cat person!"
+    btn.textContent = 'Start Over'
+    document.querySelector('#answer').append(p)
+    document.querySelector('#answer').append(btn)
+    
 }
-
-
-
 
 function handleDelete() {
     location.reload()
 }
 
-
-// function handleSubmit(){
-//     const form = document.querySelector("#name-box")
-//     const btn = document.querySelector('#submit-form')
-//     btn.textContent = 'Submit'
-//     btn.style.fontSize = '30px'
-//     form.addEventListener('submit', e => {
-//         // e.preventDefault()
-//         const userInput = e.target.name.value
-//         alert (`Congratulations, ${userInput}, you are a cat person!`)
-//         form.reset()
-//     })
-// }
-
 // Function Invocations
 handleMouse()
 handleClick()
 displayCat()
-// handleSubmit()

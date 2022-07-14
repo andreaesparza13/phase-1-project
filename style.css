@@ -69,6 +69,24 @@ form {
     justify-content: center;
 }
 
-img {
-    box-sizing: border-box;
+#answer {
+    /* display: flex; */
+    position: relative;
+    align-items: center;
+    flex-wrap: wrap;
+    font-size: 30px;
+    height: 100px;
+    width: 50%;
+    border: 0;
+    padding: 5px;
+    margin: auto;
+    align-content: center;
+    text-align: center;
+    justify-content: center;
 }
+
+img {
+    height: 500px;
+    width: 100%;
+}
+
