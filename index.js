@@ -14,28 +14,26 @@ function displayCat() {
 const handleMouse = () => {
     answerChoice.forEach(choice => {
         choice.addEventListener('mouseenter', (e) => {
-            e.target.style.fontSize = '30px'
+            e.target.style.fontWeight = 'bolder'
         })
         choice.addEventListener('mouseleave', (e) => {
-            e.target.style.fontSize = '20px'
+            e.target.style.fontWeight = '500'
         })
     }) 
 }
 
 
 function handleClick() {
-    let i = 0
     answerChoice.forEach(choice => {
         choice.addEventListener('click', e => {
-            if (i % 2 == 0) {
-                e.target.style.backgroundColor = "lime"
-            } else {
-                e.target.style.backgroundColor = "white"
+            if (e.target.style.backgroundColor != 'lime') {
+                e.target.style.backgroundColor = 'lime'
+            } else  {
+                e.target.style.backgroundColor = 'white'
             }
-            i++
-
+            console.log(e.target.style.backgroundColor)
         })
-    });
+    })
 }
 
 
@@ -43,6 +41,7 @@ function handleSubmit(){
     const form = document.querySelector("#name-box")
     const btn = document.querySelector('#submit-form')
     btn.textContent = 'Submit'
+    btn.style.fontSize = '30px'
     form.addEventListener('submit', e => {
         // e.preventDefault()
         const userInput = e.target.name.value
