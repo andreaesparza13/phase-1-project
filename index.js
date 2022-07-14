@@ -47,10 +47,21 @@ form.addEventListener('submit', (e) => {
 
 function buildAnswer(answer) {
     let p = document.createElement('p')
-    p.textContent = "Congratulations,  " + `${answer}` + ", you are a cat person!"
+    let btn = document.createElement('button')
+    btn.addEventListener('click', handleDelete)
+    p.textContent = "Congratulations,  " + `${answer}` + ", you are a cat person! "
+    btn.textContent = 'retake'
+    document.querySelector('#answer').appendChild(btn)
     document.querySelector('#answer').appendChild(p)
     let catPic = document.querySelector('img')
     catPic.src = urlObject
+}
+
+
+
+
+function handleDelete() {
+    location.reload()
 }
 
 
